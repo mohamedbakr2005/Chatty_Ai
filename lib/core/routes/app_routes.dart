@@ -13,6 +13,9 @@ class AppRoutes {
 
   /* <---- ENTRYPOINT -----> */
   static const entryPoint = '/entry_point';
+  static const init = '/init';
+  static const startChat = '/startChat';
+  static const chatScreen = '/chatScreen';
 
   /* <---- Products Order Process -----> */
   static const home = '/home';

@@ -55,21 +55,21 @@ class AppTextFormField extends StatelessWidget {
         hintText: hintText,
         hintStyle: TextStyle(color: AppColors.gray, fontSize: 16.sp),
         filled: true,
-        fillColor: Colors.white,
+        fillColor: AppColors.lightGreen,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.w),
           borderSide: BorderSide(color: AppColors.gray, width: 0.1.w),
         ),
-        // enabledBorder: OutlineInputBorder(
-        //   borderRadius: BorderRadius.circular(10.w),
-        //   borderSide: BorderSide(color: AppColors.gray, width: 0.1.w),
-        // ),
-        // focusedBorder: OutlineInputBorder(
-        //   borderRadius: BorderRadius.circular(10.w),
-        //   borderSide: BorderSide(color: AppColors.gray, width: 1.5.w),
-        // ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.w),
+          borderSide: BorderSide(color: AppColors.primary, width: 1.w),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10.w),
+          borderSide: BorderSide(color: AppColors.primary, width: 1.w),
+        ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.w),
           borderSide: BorderSide(color: AppColors.red, width: 1.5.w),

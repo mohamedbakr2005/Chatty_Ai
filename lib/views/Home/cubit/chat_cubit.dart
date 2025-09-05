@@ -9,7 +9,7 @@ class ChatCubit extends Cubit<ChatState> {
   ChatCubit() : super(const ChatInitial());
 
   final HiveService _hiveService = HiveService();
-  final OpenAIService _openaiService = OpenAIService();
+  // final OpenAIService _openaiService = OpenAIService();
 
   Conversation? _currentConversation;
   String _currentLanguage = 'en';
@@ -122,17 +122,17 @@ class ChatCubit extends Cubit<ChatState> {
           .toList();
 
       // Get AI response
-      final aiResponse = await _openaiService.generateResponse(
-        userMessage: userMessage,
-        conversationHistory: history,
-        language: _currentLanguage,
-      );
+      // final aiResponse = await _openaiService.generateResponse(
+      //   userMessage: userMessage,
+      //   conversationHistory: history,
+      //   language: _currentLanguage,
+      // );
 
       // Update AI message
       final updatedMessages = _currentConversation!.messages.map((msg) {
         if (msg.id == _currentConversation!.messages.last.id) {
           return msg.copyWith(
-            text: aiResponse,
+            // text: aiResponse,
             isGenerating: false,
             isCompleted: true,
           );

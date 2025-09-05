@@ -1,5 +1,4 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:chatty_ai/core/constants/api_config.dart';
 import 'package:chatty_ai/core/models/chat_message.dart';
 import 'package:chatty_ai/core/models/conversation.dart';
 
@@ -26,11 +25,11 @@ class HiveService {
         Hive.registerAdapter(ConversationAdapter());
       }
 
-      // Open boxes
-      _conversationsBox = await Hive.openBox<Conversation>(
-        ApiConfig.conversationsBoxName,
-      );
-      _settingsBox = await Hive.openBox(ApiConfig.settingsBoxName);
+      // // Open boxes
+      // _conversationsBox = await Hive.openBox<Conversation>(
+      //   ApiConfig.conversationsBoxName,
+      // );
+      // _settingsBox = await Hive.openBox(ApiConfig.settingsBoxName);
 
       _isInitialized = true;
       print('✅ Hive boxes opened successfully');

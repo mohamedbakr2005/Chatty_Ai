@@ -42,7 +42,7 @@ class BottomNavBar extends StatelessWidget {
                     index: 1,
                     icon: Icons.grid_view,
                     activeIcon: Icons.grid_view,
-                    label: 'Search',
+                    label: 'AI Assistants',
                     isActive: state.currentIndex == 1,
                   ),
                   _buildNavItem(
@@ -50,7 +50,7 @@ class BottomNavBar extends StatelessWidget {
                     index: 2,
                     icon: Icons.history,
                     activeIcon: Icons.history,
-                    label: 'Saved',
+                    label: 'History',
                     isActive: state.currentIndex == 2,
                   ),
                   _buildNavItem(
@@ -58,7 +58,7 @@ class BottomNavBar extends StatelessWidget {
                     index: 3,
                     icon: Icons.person_outline,
                     activeIcon: Icons.person_outline,
-                    label: 'Cart',
+                    label: 'Account',
                     isActive: state.currentIndex == 3,
                   ),
                 ],

@@ -1,20 +1,20 @@
-import 'package:chatty_ai/views/Home/ui/chat_screen.dart';
+import 'package:chatty_ai/core/models/conversation.dart';
+import 'package:chatty_ai/views/init/init_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:chatty_ai/core/services/hive_service.dart';
-import 'package:chatty_ai/views/Home/ui/Home_Screen.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  try {
-    // Initialize Hive
-    await HiveService().initialize();
-    print('✅ Hive initialized successfully');
-  } catch (e) {
-    print('⚠️ Hive initialization failed: $e');
-    print('⚠️ App will continue without local storage');
-  }
+  await Hive.initFlutter();
+
+  Hive.registerAdapter(ConversationAdapter());
+  Hive.registerAdapter(MessageAdapter());
+  
+
+  await Hive.openBox<Conversation>('conversations');
 
   runApp(const MyApp());
 }
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: const Size(375, 812), // iPhone X design size
+      designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             Locale('en', ''), // English
             Locale('ar', ''), // Arabic
           ],
-          home: const ChatScreen(),
+          home: const InitScreen(),
         );
       },
     );

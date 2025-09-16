@@ -1,6 +1,6 @@
 import 'package:chatty_ai/core/routes/unknown_page.dart';
 import 'package:chatty_ai/views/Home/ui/Home_Screen.dart';
-import 'package:chatty_ai/views/Home/ui/chat_screen.dart';
+import 'package:chatty_ai/views/ChatScreen/ui/chat_screen.dart';
 import 'package:chatty_ai/views/Home/widgets/Start_chat_screen.dart';
 import 'package:chatty_ai/views/init/init_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,8 +18,7 @@ class RouteGenerator {
         return CupertinoPageRoute(builder: (_) => const InitScreen());
       case AppRoutes.chatScreen:
         return CupertinoPageRoute(builder: (_) => const ChatScreen());
-      case AppRoutes.startChat:
-        return CupertinoPageRoute(builder: (_) => const StartChatScreen());
+      
 
       default:
         return errorRoute();

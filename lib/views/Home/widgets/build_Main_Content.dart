@@ -1,10 +1,10 @@
+import 'package:chatty_ai/views/ChatScreen/ui/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:chatty_ai/core/constants/app_colors.dart';
 import 'package:chatty_ai/core/constants/app_images.dart';
 import 'package:chatty_ai/core/constants/app_spacing.dart';
 import 'package:chatty_ai/core/components/app_button.dart';
-import 'package:chatty_ai/views/Home/cubit/home_cubit.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuildMainContent extends StatelessWidget {
@@ -68,7 +68,10 @@ class BuildMainContent extends StatelessWidget {
           // Start Chat button
           AppButton(
             onPressed: () {
-              context.read<HomeCubit>().showChat();
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ChatScreen()),
+              );
             },
             text: 'Start Chat',
             backgroundColor: AppColors.primary,

@@ -15,6 +15,7 @@ class AppTextFormField extends StatelessWidget {
   final Function()? onTap;
   final int? maxLength;
   final String? initialValue;
+  final EdgeInsetsGeometry? contentPadding;
   const AppTextFormField({
     super.key,
     required this.hintText,
@@ -28,7 +29,7 @@ class AppTextFormField extends StatelessWidget {
     this.readOnly = false,
     this.onTap,
     this.maxLength,
-    this.initialValue,
+    this.initialValue, this.contentPadding,
   });
 
   @override

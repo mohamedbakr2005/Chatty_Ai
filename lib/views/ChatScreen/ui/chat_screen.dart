@@ -46,9 +46,7 @@ class _ChatScreenState extends State<ChatScreen> {
     }
   }
 
-  // ضيف الدالة دي في أي مكان داخل الـ _ChatScreenState
   Future<void> _generateChatTitle() async {
-    // بنستخدم أول رسالة عشان نطلب عنوان منها
     final firstMessage = conversation.messages.first.text;
 
     final request =
@@ -83,17 +81,12 @@ class _ChatScreenState extends State<ChatScreen> {
       final title = data["choices"]?[0]?["message"]?["content"];
 
       if (title != null) {
-        // بنحدث الـ title في الـ Conversation Object وبنحفظه
         setState(() {
-          conversation.title = title.replaceAll(
-            '"',
-            '',
-          ); // عشان لو العنوان فيه علامات تنصيص
+          conversation.title = title.replaceAll('"', '');
         });
         conversation.save();
       }
     } catch (e) {
-      // لو حصل خطأ في توليد العنوان، ممكن نتجاهله أو نحط عنوان افتراضي
       debugPrint("Error generating chat title: $e");
     }
   }
@@ -181,7 +174,7 @@ class _ChatScreenState extends State<ChatScreen> {
               _responseSubscription?.cancel();
               setState(() {
                 _isGenerating = false;
-                conversation.lastUpdated = DateTime.now(); // تحديث هنا
+                conversation.lastUpdated = DateTime.now();
               });
               conversation.save();
             },
@@ -227,7 +220,9 @@ class _ChatScreenState extends State<ChatScreen> {
     final messages = conversation.messages;
 
     return Scaffold(
+      backgroundColor: AppColors.scaffoldBackgroundLight,
       appBar: AppBar(
+        backgroundColor: AppColors.scaffoldBackgroundLight,
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back_ios),

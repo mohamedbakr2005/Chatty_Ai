@@ -1,4 +1,5 @@
 import 'package:chatty_ai/core/models/conversation.dart';
+// import 'package:chatty_ai/views/SplashScreen/Splash_screen.dart';
 import 'package:chatty_ai/views/init/init_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,7 +13,6 @@ void main() async {
 
   Hive.registerAdapter(ConversationAdapter());
   Hive.registerAdapter(MessageAdapter());
-  
 
   await Hive.openBox<Conversation>('conversations');
 
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             Locale('en', ''), // English
             Locale('ar', ''), // Arabic
           ],
-          home: const InitScreen(),
+          home: InitScreen(),
         );
       },
     );

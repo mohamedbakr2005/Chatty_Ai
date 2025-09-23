@@ -12,17 +12,10 @@ class BuildHeader extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Back arrow button
-          IconButton(
-            onPressed: () {
-              // TODO: Navigate back
-            },
-            icon: Icon(Icons.arrow_back, color: AppColors.black, size: 24.w),
-          ),
-
           // Centered title
-          Expanded(
+          Center(
             child: Text(
               'ChattyAI',
               style: TextStyle(
@@ -35,7 +28,6 @@ class BuildHeader extends StatelessWidget {
           ),
 
           // Empty space to balance the back button
-          SizedBox(width: 48.w),
         ],
       ),
     );

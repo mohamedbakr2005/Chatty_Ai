@@ -3,4 +3,5 @@ class AppImages {
   static const mainIconGrey = 'assets/images/icon_grey.png';
   static const empty = 'assets/images/empty.png';
   static const notFound = 'assets/images/not-found.png';
+  static const userAvatar = 'assets/images/me.jpg';
 }

@@ -7,6 +7,7 @@ import 'package:chatty_ai/views/Account/widgets/ProfileCard.dart';
 import 'package:chatty_ai/views/Account/widgets/SectionTitle.dart';
 import 'package:chatty_ai/views/Account/widgets/ToggleMenuItem.dart';
 import 'package:chatty_ai/views/Account/widgets/UpgradeCard.dart';
+import 'package:chatty_ai/views/PersonalInfo/ui/Personal_info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -57,12 +58,12 @@ class _AccountScreenState extends State<AccountScreen> {
               icon: Icons.person_outline,
               title: "Personal Info",
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const PersonalInfoScreen(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PersonalInfoScreen(),
+                  ),
+                );
               },
             ),
             MenuItem(icon: Icons.security, title: "Security"),

@@ -7,6 +7,7 @@ import 'package:chatty_ai/views/Account/widgets/ProfileCard.dart';
 import 'package:chatty_ai/views/Account/widgets/SectionTitle.dart';
 import 'package:chatty_ai/views/Account/widgets/ToggleMenuItem.dart';
 import 'package:chatty_ai/views/Account/widgets/UpgradeCard.dart';
+import 'package:chatty_ai/views/Language/ui/Language_Screen.dart';
 import 'package:chatty_ai/views/PersonalInfo/ui/Personal_info_screen.dart';
 import 'package:chatty_ai/views/Security/ui/Security_Screen.dart';
 import 'package:flutter/material.dart';
@@ -83,6 +84,14 @@ class _AccountScreenState extends State<AccountScreen> {
               icon: Icons.language,
               title: "Language",
               trailingText: "English (US)",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LanguageScreen(),
+                  ),
+                );
+              },
             ),
             ToggleMenuItem(icon: Icons.dark_mode_outlined, title: "Dark Mode"),
             verticalSpace(30),

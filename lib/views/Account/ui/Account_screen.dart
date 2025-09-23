@@ -7,8 +7,10 @@ import 'package:chatty_ai/views/Account/widgets/ProfileCard.dart';
 import 'package:chatty_ai/views/Account/widgets/SectionTitle.dart';
 import 'package:chatty_ai/views/Account/widgets/ToggleMenuItem.dart';
 import 'package:chatty_ai/views/Account/widgets/UpgradeCard.dart';
+import 'package:chatty_ai/views/HelpCenter/ui/HelpCenter_screen.dart';
 import 'package:chatty_ai/views/Language/ui/Language_Screen.dart';
 import 'package:chatty_ai/views/PersonalInfo/ui/Personal_info_screen.dart';
+import 'package:chatty_ai/views/Privacy/ui/Privacy_Screen.dart';
 import 'package:chatty_ai/views/Security/ui/Security_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -99,8 +101,31 @@ class _AccountScreenState extends State<AccountScreen> {
             // About Section
             SectionTitle("", title: "About"),
             verticalSpace(10),
-            MenuItem(icon: Icons.help_outline, title: "Help Center"),
-            MenuItem(icon: Icons.lock_outline, title: "Privacy Policy"),
+            MenuItem(
+              icon: Icons.help_outline,
+              title: "Help Center",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const HelpCenterScreen(),
+                  ),
+                );
+              },
+            ),
+            MenuItem(
+              icon: Icons.lock_outline,
+              title: "Privacy Policy",
+              onTap: () {
+                // Navigate to Privacy Policy Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const PrivacyPolicyScreen(),
+                  ),
+                );
+              },
+            ),
             MenuItem(icon: Icons.info_outline, title: "About ChattyAI"),
             verticalSpace(20),
 

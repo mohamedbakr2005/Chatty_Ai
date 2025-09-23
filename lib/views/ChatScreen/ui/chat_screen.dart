@@ -5,6 +5,7 @@ import 'package:chatty_ai/core/constants/app_colors.dart';
 import 'package:chatty_ai/core/constants/app_images.dart';
 import 'package:chatty_ai/core/constants/app_spacing.dart';
 import 'package:chatty_ai/core/models/conversation.dart';
+import 'package:chatty_ai/views/ChatScreen/widgets/message_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
@@ -13,7 +14,7 @@ import 'package:share_plus/share_plus.dart';
 import 'package:hive/hive.dart';
 
 const OPENROUTER_API_KEY =
-    "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";
+    "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";
 
 class ChatScreen extends StatefulWidget {
   final String? conversationId; // لو جاي من History
@@ -247,30 +248,9 @@ class _ChatScreenState extends State<ChatScreen> {
                       itemCount: messages.length,
                       itemBuilder: (context, index) {
                         final msg = messages[index];
-                        return Align(
-                          alignment: msg.isUser
-                              ? Alignment.centerRight
-                              : Alignment.centerLeft,
-                          child: Container(
-                            padding: const EdgeInsets.all(12),
-                            margin: const EdgeInsets.all(6),
-                            decoration: BoxDecoration(
-                              color: msg.isUser
-                                  ? AppColors.primary
-                                  : AppColors.grayLight,
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                            child: Text(
-                              msg.text,
-                              style: TextStyle(
-                                fontSize: 18.sp,
-                                fontWeight: FontWeight.bold,
-                                color: msg.isUser
-                                    ? AppColors.white
-                                    : AppColors.black,
-                              ),
-                            ),
-                          ),
+                        return MessageBubble(
+                          text: msg.text,
+                          isUser: msg.isUser,
                         );
                       },
                     ),

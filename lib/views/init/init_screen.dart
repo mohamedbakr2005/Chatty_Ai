@@ -1,3 +1,4 @@
+import 'package:chatty_ai/views/Account/ui/Account_screen.dart';
 import 'package:chatty_ai/views/History/ui/history_screen.dart';
 import 'package:chatty_ai/views/Home/ui/Home_Screen.dart';
 import 'package:chatty_ai/views/init/cubit/bottom_nav_cubit.dart';
@@ -33,7 +34,7 @@ class InitScreen extends StatelessWidget {
       case 2:
         return const HistoryScreen();
       case 3:
-        return const HomeScreen();
+        return const AccountScreen();
       case 4:
         return const HomeScreen();
       default:

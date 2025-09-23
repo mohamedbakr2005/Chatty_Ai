@@ -1,6 +1,7 @@
 import 'package:chatty_ai/core/constants/app_colors.dart';
 import 'package:chatty_ai/core/constants/app_images.dart';
 import 'package:chatty_ai/core/constants/app_spacing.dart';
+import 'package:chatty_ai/views/About/ui/About_screen.dart';
 import 'package:chatty_ai/views/Account/widgets/LogoutButton.dart';
 import 'package:chatty_ai/views/Account/widgets/MenuItem.dart';
 import 'package:chatty_ai/views/Account/widgets/ProfileCard.dart';
@@ -126,7 +127,19 @@ class _AccountScreenState extends State<AccountScreen> {
                 );
               },
             ),
-            MenuItem(icon: Icons.info_outline, title: "About ChattyAI"),
+            MenuItem(
+              icon: Icons.info_outline,
+              title: "About ChattyAI",
+              onTap: () {
+                // Navigate to About Screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const AboutChattyAIScreen(),
+                  ),
+                );
+              },
+            ),
             verticalSpace(20),
 
             // Logout Button

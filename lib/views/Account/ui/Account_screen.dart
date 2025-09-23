@@ -8,6 +8,7 @@ import 'package:chatty_ai/views/Account/widgets/SectionTitle.dart';
 import 'package:chatty_ai/views/Account/widgets/ToggleMenuItem.dart';
 import 'package:chatty_ai/views/Account/widgets/UpgradeCard.dart';
 import 'package:chatty_ai/views/PersonalInfo/ui/Personal_info_screen.dart';
+import 'package:chatty_ai/views/Security/ui/Security_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -66,7 +67,18 @@ class _AccountScreenState extends State<AccountScreen> {
                 );
               },
             ),
-            MenuItem(icon: Icons.security, title: "Security"),
+            MenuItem(
+              icon: Icons.security,
+              title: "Security",
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SecurityScreen(),
+                  ),
+                );
+              },
+            ),
             MenuItem(
               icon: Icons.language,
               title: "Language",

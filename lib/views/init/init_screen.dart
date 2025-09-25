@@ -1,3 +1,4 @@
+import 'package:chatty_ai/views/AI-Assistants/ui/Ai_Assistants_screen.dart';
 import 'package:chatty_ai/views/Account/ui/Account_screen.dart';
 import 'package:chatty_ai/views/History/ui/history_screen.dart';
 import 'package:chatty_ai/views/Home/ui/Home_Screen.dart';
@@ -30,7 +31,7 @@ class InitScreen extends StatelessWidget {
       case 0:
         return const HomeScreen();
       case 1:
-        return const HomeScreen();
+        return const AiAssistantsScreen();
       case 2:
         return const HistoryScreen();
       case 3:

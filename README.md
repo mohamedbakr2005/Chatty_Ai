@@ -21,7 +21,7 @@ Chatty AI is a modern conversational AI mobile app built with **Flutter**. It in
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/chatty_ai.git
+   git clone https://github.com/mohamedbakr2005/Chatty_Ai.git
    cd chatty_ai
    ```
 
